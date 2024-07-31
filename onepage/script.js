@@ -1,3 +1,48 @@
+// Import statement dipindahkan ke atas file
+import { project } from "../resource/images.js";
+
+function displayProjects() {
+  const container = document.querySelector('.kontainer-box');
+  container.innerHTML = ''; // Bersihkan kontainer sebelum menambahkan proyek baru
+
+  // Tampilkan 3 proyek pertama
+  for (let i = 0; i < 2 && i < project.length; i++) {
+    const box = document.createElement('div');
+    box.className = 'box';
+
+    const imageDiv = document.createElement('div');
+    imageDiv.id = `box1-${i}`;
+    imageDiv.style.backgroundImage = `url(${project[i].image})`;
+    imageDiv.textContent = 'image';
+
+    const titleDiv = document.createElement('div');
+    titleDiv.id = `box2-${i}`;
+    titleDiv.textContent = project[i].name;
+
+    const buttonDiv = document.createElement('div');
+    buttonDiv.id = `box3-${i}`;
+    const button = document.createElement('button');
+    button.textContent = 'Preview';
+    button.onclick = () => preview_image(i);
+    buttonDiv.appendChild(button);
+
+    box.appendChild(imageDiv);
+    box.appendChild(titleDiv);
+    box.appendChild(buttonDiv);
+
+    container.appendChild(box);
+  }
+}
+
+function preview_image(index) {
+  let judul = document.getElementById(`box2-${index}`);
+  let gambar = document.getElementById(`box1-${index}`);
+  judul.textContent = project[index].name;
+  gambar.style.backgroundImage = `url(${project[index].image})`;
+}
+
+// Panggil fungsi untuk menampilkan proyek saat halaman dimuat
+displayProjects();
 function timelife() {
   let hours = document.getElementById("hours");
   let minute = document.getElementById("minute");
@@ -7,6 +52,7 @@ function timelife() {
   hours.innerHTML = dates.getHours().toString().padStart(2, "0");
   minute.innerHTML = dates.getMinutes().toString().padStart(2, "0");
 }
+
 setInterval(timelife, 1000);
 timelife();
 // Fungsi untuk membuat background luar angkasa modern
@@ -61,7 +107,7 @@ function createSpaceBackground() {
       ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
       ctx.fill();
 
-      // Menggerakkan bintang ke arah kanan dan kirku 
+      // Menggerakkan bintang ke arah kanan dan kirku
       star.x += star.vx / 30;
       star.y += star.vy / 30;
 
@@ -78,5 +124,4 @@ function createSpaceBackground() {
   animate();
 }
 
-// Memanggil fungsi untuk membuat background
 createSpaceBackground();

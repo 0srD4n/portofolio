@@ -23,7 +23,7 @@ function onepagetulisa() {
     }
   }, 200);
   buttondisplay.onclick = function () {
-    window.location.href = "/onepage/index.html";
+    window.location.href = "onepage/index.html";
   };
 }
 onepagetulisa();

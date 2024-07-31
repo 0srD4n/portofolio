@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <script src="script.js" defer type="module"></script>
   </head>
 
   <body>
@@ -27,25 +27,11 @@
     <main>
       <h2>Project</h2>
       <div class="kontainer-box">
-        <div class="box li1">
-          <div class="box1-1isi">image</div>
-          <div class="box2-1isi">judul</div>
-          <div class="box3-1isi">
-            <button>Preview</button>
-          </div>
-        </div>
-        <div class="box li2">
-          <div class="box1-1isi">image</div>
-          <div class="box2-1isi">judul</div>
-          <div class="box3-1isi">
-            <button>Preview</button>
-          </div>
-        </div>
-        <div class="box li3">
-          <div class="box1-1isi">image</div>
-          <div class="box2-1isi">judul</div>
-          <div class="box3-1isi">
-            <button>Preview</button>
+        <div class="box">
+          <div id="box1"></div>
+          <div id="box2"></div>
+          <div id="box3">
+            <button onclick="preview_image(0)">Preview</button>
           </div>
         </div>
       </div>

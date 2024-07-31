@@ -23,14 +23,16 @@ nav .box-menu {
   color: white;
 }
 /* main style */
-main{
+main {
   display: block;
   text-align: center;
   margin-top: 30px;
   height: 100%;
+  width: 100%;
+  backdrop-filter: blur(3px);
 }
-main h2{
-  color:white;
+main h2 {
+  color: white;
   font-size: 30px;
 }
 .kontainer-box {
@@ -51,7 +53,7 @@ main h2{
   height: 100%;
   padding: 20px;
 }
-main .kontainer-box  button {
+main .kontainer-box button {
   background-color: rgb(15, 193, 9);
   color: white;
   width: 60%;
