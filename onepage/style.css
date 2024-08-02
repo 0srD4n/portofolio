@@ -1,63 +1,129 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
+
 nav {
   padding: 30px;
-  background-color: rgba(23, 22, 22, 0.897);
+  background-color: rgba(23, 22, 22, 0.89);
   position: sticky;
+  top: 0;
   display: flex;
+  backdrop-filter: blur(2px);
   justify-content: space-between;
+  font-size: 20px;
+  z-index: 1000;
 }
+
 nav .box-menu {
   display: flex;
   justify-content: space-between;
   width: 200px;
 }
+
 .box-menu a {
+  margin-right: 10px;
   color: white;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
+
+.box-menu a:hover {
+  color: #ddd;
+}
+
 .time-left {
   color: white;
 }
+
 /* main style */
 main {
-  display: block;
-  text-align: center;
-  margin-top: 30px;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  backdrop-filter: blur(3px);
+  margin: auto;
 }
+
 main h2 {
   color: white;
   font-size: 30px;
+  margin-bottom: 20px;
 }
+
 .kontainer-box {
-  margin: auto;
-  backdrop-filter: blur(3px);
   display: flex;
-  margin-top: 8%;
-  position: relative;
+  padding: 30px;
   justify-content: space-around;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
 }
-.box {
-  text-align: center;
-  border-style: groove;
-  width: 30%;
-  backdrop-filter: blur(3px);
-  height: 100%;
+
+#box1,
+#box2 {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 45%;
+  max-width: 500px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
-main .kontainer-box button {
-  background-color: rgb(15, 193, 9);
-  color: white;
-  width: 60%;
+
+button {
+  width: 100px;
   height: 40px;
-  border-color: rgb(0, 255, 13);
-  font-size: medium;
+  margin-top: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#image2,
+#image5{
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#box1 > div,
+#box2 > div {
+  width: 100%;
+  color: white;
+  font-size: larger;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .kontainer-box {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  #box1,
+  #box2 {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+main h2 {
+  margin-top: 20px;
 }
