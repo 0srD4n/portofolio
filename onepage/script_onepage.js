@@ -92,50 +92,48 @@ const image = [
     image: "./resource/1.jpeg",
     name: "Project 2",
     link: "https://example.com/project2",
-    deskripsi: "ini adalah deskirpsii project ketiga",
+    deskripsi: "ini adalah deskirpsii project ketiga tod",
   },
   {
     image: "./resource/2.jpeg",
     name: "Project 3",
     link: "https://example.com/project3",
-    deskripsi: "ini adalah deskripsi project keempat",
+    deskripsi: "ini adalah deskripsi project keempat tod ",
   },
   {
     image: "./resource/1.jpeg",
     name: "Project 4",
     link: "https://example.com/project4",
-    deskripsi: "ini adalah deskripsi project kelima",
+    deskripsi: "ini adalah deskripsi project kelima tod",
   },
 ];
 let index = 0;
 function images_(index) {
-  // ganjil
-  if (index % 2 !== 0 || index == 0) {
-    let images = document.getElementById("image2");
-    let judul = document.getElementById("image1");
-    let deskrip = document.getElementById("deskripsi1");
-    images.style.backgroundImage = `url(${image[index].image})`;
-    judul.textContent = image[index].name;
-    deskrip.textContent = image[index].deskripsi;
-  }
-  // genaps kun
-  else {
-    let images = document.getElementById("image5");
-    let judul = document.getElementById("image4");
-    let deskrip = document.getElementById("deskripsi2");
-    images.style.backgroundImage = `url(${image[index].image})`;
-    judul.textContent = image[index].name;
-    deskrip.textContent = image[index].deskripsi;
-  }
+  // display image onene
+  let images1 = document.getElementById("image2");
+  let judul1 = document.getElementById("image1");
+  let deskrip1 = document.getElementById("deskripsi1");
+  images1.style.backgroundImage = `url(${image[index].image})`;
+  judul1.textContent = image[index].name;
+  deskrip1.textContent = image[index].deskripsi;
 
-  //box 2
+  // display image twow brou 
+  let images2 = document.getElementById("image5");
+  let judul2 = document.getElementById("image4");
+  let deskrip2 = document.getElementById("deskripsi2");
+  let nextIndex = (index + 1) % image.length;
+  images2.style.backgroundImage = `url(${image[nextIndex].image})`;
+  judul2.textContent = image[nextIndex].name;
+  deskrip2.textContent = image[nextIndex].deskripsi;
 }
+
 function loopimage() {
-  index++;
-  if (index > image.length - 1) {
+  index += 2;
+  if (index >= image.length) {
     index = 0;
   }
   images_(index);
 }
-images_(index);
+
+images_(0);
 setInterval(loopimage, 5000);
